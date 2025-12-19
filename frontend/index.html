@@ -1,56 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>WhatsApp Birthday Sender</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #eef1f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            width: 350px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        input {
-            padding: 12px;
-            width: 90%;
-            margin-top: 10px;
-            font-size: 18px;
-        }
-        button {
-            margin-top: 20px;
-            background: #25D366;
-            color: white;
-            padding: 12px;
-            font-size: 18px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        #status {
-            margin-top: 20px;
-            font-size: 16px;
-            color: black;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h2>🎉 WhatsApp Birthday Sender</h2>
-    <input id="phone" placeholder="Enter WhatsApp Number (Ex: +917207097501)" />
-    <button onclick="sendBirthday()">Send Birthday Wish</button>
-    <p id="status"></p>
-</div>
-
 <script>
 async function sendBirthday() {
     const phone = document.getElementById("phone").value;
@@ -62,7 +9,7 @@ async function sendBirthday() {
 
     document.getElementById("status").innerText = "Sending...";
 
-    const res = await fetch("https://wishes-sender1111.onrender.com", {
+    const res = await fetch("https://wishes-sender1111.onrender.com/send-birthday", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ phone })
@@ -77,6 +24,3 @@ async function sendBirthday() {
     }
 }
 </script>
-
-</body>
-</html>
